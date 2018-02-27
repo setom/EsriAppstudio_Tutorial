@@ -209,13 +209,18 @@ Save your code (Ctrl + S) and then go to AppStudio. Run your app by double-click
 
 ## What Happened?!
 Uh oh. 
+
+![Uh Oh](Images/wrongSpot.PNG "What Happened?!?")
+
 The app looks pretty good, except my comboBox is in the wrong spot!
-{SCREENSHOT]
+
 This is because we told the combo box it was part of the app, but we actually wanted it to be part of the map. Remember how the MAPVIEW had the buttons inside it? We need to do the same thing for the combo box. 
 Go back to your code and select the entire ComboBox block of code (roughly line 165-209). Move that entire block so that it is INSIDE the MapView. You can put it right above the COLUMN section at roughly line 106. 
 Once that code is moved, save your code again and try running the app. 
 
 HINT: If you keep getting errors when you try to run it, the first step is to make sure that all of your curly braces match up properly. Remember, for every `{` there should be a matching `}` somewhere below it. 
+
+![Much Better](Images/Final.PNG "That's better!")
 
 ## Hooray!
 If everything worked you should be looking at a fancy app that lets the user select their basemap from a combo box!
