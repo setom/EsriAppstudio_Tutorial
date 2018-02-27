@@ -11,7 +11,8 @@ Now that you have AppStudio installed and running, it’s time to start it up an
 In the upper right, name your app Basemap Tutorial
 Click Create. 
 HINT: A secret of programming is that setting up the development environment is often the hardest part! Unfortunately, every computer is different, and it’s impossible to write a single set of instructions for every problem that you might encounter. So don’t get down if you have a hard time getting it set up. Talk to a friend or IT department if you get really stuck. It happens to everyone!
-[SCREENSHOT](link to screenshot)
+
+[Hello World](EsriAppstudio_Tutorial/Images/HelloWorld.PNG)
 
 Once your app has been created, you can run it by double clicking it. The emulator should open your app! You should see a map, with a few buttons, and the name of your app at the top. Congratulations! You’ve just made your first app!
 Feel free to play with your app, the Home and Locator button functionality comes built into the Hello World template. You can zoom in and out or you can slip the map around to view different areas!
