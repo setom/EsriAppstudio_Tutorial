@@ -23,23 +23,23 @@ When QT Creator opens, you should see the source code for your app in the pane.
 DON’T FREAK OUT! Coding can be intimidating, but we’re going to walk through and see exactly what’s going on.  
 At the very top of your file you’ll see the imported libraries. These are the specialized code libraries that let your app interact with ESRI and the mobile device. To get the basemap to toggle, we’ll need to import a few more libraries. Add the following libraries to the import list:
 
-'''
+```
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls.Material 2.1
 import QtGraphicalEffects 1.0
-'''
+```
 
 Now let’s continue exploring your app!
 The next section of the code describes what the app will look like and do when it’s running, for example, this describes what the size of the app is when it first opens.
 
-'''
+```
     width: 414
     height: 736
-'''
+```
 
 As we continue to scroll down the app, we see some different components of the app. Remember the title bar from our app? Here’s what it looks like in QT code: 
 
-'''
+```
 //header bar
     Rectangle {
         id: titleRect
@@ -69,7 +69,7 @@ As we continue to scroll down the app, we see some different components of the a
             horizontalAlignment: Text.AlignHCenter
         }
     }
-'''
+```
 
 That’s a lot of text for a simple header bar, but there’s a lot going on there! You can mess around with that if you like. Try changing the text color to black!
 HINT: find the color attribute of the text, and change its value!
@@ -79,7 +79,7 @@ Once you have made the change you want, test your change. Save your code (Ctrl+s
 That’s all fine and good, but these are ESRI apps, so lets add maps!
 Not surprisingly, the code for the Map is in the section called “MapView” Keep scrolling down until you find the “Map”
 
-'''
+```
 // add a basemap
         Map{
             id:map
@@ -95,11 +95,10 @@ Not surprisingly, the code for the Map is in the section called “MapView” Ke
                 targetScale: 9e7
             }
         }
-'''
+```
 Hopefully you can see some of the different properties of a map. The spatial reference is wkid: 102100, which is code for Web Mercator. You can see different projection codes [HERE]( https://developers.arcgis.com/rest/services-reference/projected-coordinate-systems.htm). 
 If we keep going through the code we see the map control buttons. Let’s take a closer look at one of them so we can see how they work. 
-
-'''
+```
             Button{
                 id:locationButton
                 Image{
@@ -123,12 +122,12 @@ If we keep going through the code we see the map control buttons. Let’s take a
                 }
 
             }
-'''
+```
 
 The code above is the Locator button. The IMAGE section tells the program which picture to use for the button, and how big the button should be. This button also has a property called onHoveredChange, which describes what happens to the button when the mouse hovers over it. In this case the opacity changes. 
 Below that is the onClicked section. This section tells the program what to do when the button is clicked. This button toggles the location on and off. So first the button figures out if the location beacon is already on or not. If it is NOT already on, it finds the location, then pans the map to that spot! If the location is already running, it turns the beacon off. Using pseudocode, it works like this:
 
-'''
+```
 onClicked: {
 	if (the beacon is off): {
 		find my location
@@ -138,14 +137,14 @@ onClicked: {
 		Turn the beacon off
 	}
 } 
-'''
+```
 
 ## Changing the Basemap
 Sometimes users want to see different basemaps in their apps! So let’s give them the opportunity to change it! The first thing we’ll need is a dropdown menu for the user to select the basemap from. These dropdowns are also called Combo Boxes. 
 At the bottom of your code find the last curly brace }
 Directly above it, paste the following code: 
 
-'''
+```
 ComboBox {
         id: comboBoxBasemap
         anchors {
@@ -170,7 +169,7 @@ ComboBox {
                 changeBasemap();
         }
 }
-'''
+```
 
 This should look very similar to the button code we just looked at! We can see where the combo box should be placed, what it’s background is and other properties. The MODEL property is the different choices that will be available to the user. 
 Finally, the onCurrentTextChanged property acts just like the onClicked function from the button. Whenever the text in the Combo box is changed, this part of the code runs. For this combo box, it will run the changeBasemap() function. 
@@ -180,7 +179,7 @@ We haven’t written it yet! Let’s add it now.
 At the bottom of the code find the last two curly braces. 
 Directly above the last two braces, paste the following code: 
 
-'''
+```
 function changeBasemap() {
             // Determine the selected basemap, create that type, and set the Map's basemap
             switch (comboBoxBasemap.currentText) {
@@ -201,7 +200,7 @@ function changeBasemap() {
                 break;
             }
         }
-'''
+```
 
 This code tells the combobox what to do whenever the text is changed. It checks what the new selection is, and then changes the basemap to the selected choice!
 Remember the MODEL property of the comboBox? Each of those choices is listed here, and each one has a slightly different function, can you see the difference between the Streets and Imagery choices?
@@ -215,7 +214,7 @@ This is because we told the combo box it was part of the app, but we actually wa
 Go back to your code and select the entire ComboBox block of code (roughly line 165-209). Move that entire block so that it is INSIDE the MapView. You can put it right above the COLUMN section at roughly line 106. 
 Once that code is moved, save your code again and try running the app. 
 
-HINT: If you keep getting errors when you try to run it, the first step is to make sure that all of your curly braces match up properly. Remember, for every { there should be a matching } somewhere below it. 
+HINT: If you keep getting errors when you try to run it, the first step is to make sure that all of your curly braces match up properly. Remember, for every `{` there should be a matching `}` somewhere below it. 
 
 ## Hooray!
 If everything worked you should be looking at a fancy app that lets the user select their basemap from a combo box!
