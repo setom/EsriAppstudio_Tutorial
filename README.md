@@ -10,8 +10,11 @@ Download Appstudio [HERE]( https://doc.arcgis.com/en/appstudio/download/) and se
 The screenshots in this tutorial are from a Windows 10 system, Mac users may have different UI. 
 ## Hello World!
 Now that you have AppStudio installed and running, it’s time to start it up and make our first app! Open Appstudio and select New App > Starter > Hello World (Runtime)
+
 In the upper right, name your app Basemap Tutorial
+
 Click Create. 
+
 HINT: A secret of programming is that setting up the development environment is often the hardest part! Unfortunately, every computer is different, and it’s impossible to write a single set of instructions for every problem that you might encounter. So don’t get down if you have a hard time getting it set up. Talk to a friend or IT department if you get really stuck. It happens to everyone!
 
 ![Hello World](Images/HelloWorld.PNG "Hello World!")
