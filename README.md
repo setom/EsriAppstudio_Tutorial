@@ -1,6 +1,8 @@
 # Toggling Basemaps in Esri AppStudio Apps
 This tutorial will take you through creating a ver basic ESRI appstudio app that allows a user to toggle the basemap of an ESRI AppStudio app. 
-Only rudimentary coding skills are needed to complete this tutorial. All source code can be found in this repository. 
+Only rudimentary coding skills are needed to complete this tutorial. All source code can be found in this repository.
+
+HINT: If you ever run into problems, check out the MyApp.qml file in this repository to view the source code for the final product. 
 
 ## Getting Started
 In order to complete this tutorial you must have downloaded and installed ESRI Appstudio. Applicable ESRI licenses may be required, contact your local IT department if you require licenses. 
